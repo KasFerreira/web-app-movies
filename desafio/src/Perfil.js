@@ -1,7 +1,9 @@
 import React from 'react'
+import Heading from './components/Header/Heading'
 
 const Perfil = ()=>{
-    return <h1>MY profile</h1>
+    return <Heading/>
+
 }
 
 export default Perfil;
