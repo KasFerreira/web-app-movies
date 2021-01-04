@@ -1,6 +1,7 @@
 import Heading from "./components/Header/Heading";
 import axios from "axios";
 import React, { Component } from "react";
+import ListaFilmes from './components/ListaFilmes'
 
 class Movies extends Component {
   state = {
@@ -18,22 +19,15 @@ class Movies extends Component {
   render() {
     const { filmes } = this.state;
     return (
-      <div className="listaFilmes">
+      <div className="movies">
+        <Heading/>
         <h1>Listar os filmes</h1>
+      <div className="listaFilmes">
         
-          {filmes.map((filme) => (
-            <li key={filme.id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w400/${filme.poster_path}`}
-                alt="Movie Poster"
-                height="290px"
-                width="200px"
-              />
-              <div><h2>{filme.title}</h2></div>
-              
-            </li>
-          ))}
+        <ListaFilmes data={filmes}/>
+          
         
+      </div>
       </div>
     );
   }
