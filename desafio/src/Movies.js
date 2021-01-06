@@ -1,35 +1,42 @@
 import Heading from "./components/Header/Heading";
 import axios from "axios";
-import React, { Component } from "react";
-import ListaFilmes from './components/ListaFilmes'
+import React, { useState, useEffect } from "react";
+import ListaFilmes from "./components/ListaFilmes";
 
-class Movies extends Component {
-  state = {
-    filmes: [],
-  };
-  async componentDidMount() {
+const  Movies = ()=> {
+  const [filmes, setFilmes] = useState([])
+  const [page, setPage] = useState(1)
+
+
+  async function getFilmes(page=1){
+
     const response = await axios.get(
-      "https://api.themoviedb.org/3/discover/movie?api_key=5f5639e7e6d8cd1f2e64643d369ab6e8&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
+      "https://api.themoviedb.org/3/movie/popular?api_key=5f5639e7e6d8cd1f2e64643d369ab6e8&language=en-US&page="+page
     );
-    console.log(response.data.results);
+    console.log(response.data);
 
-    this.setState({ filmes: response.data.results });
+    setFilmes(filmes=>[...filmes,...response.data.results]);
+
   }
 
-  render() {
-    const { filmes } = this.state;
+    useEffect(()=>{
+   
+     getFilmes(page)
+
+    }, [page])
+    
+  
+    
+   
     return (
       <div className="movies">
-        <Heading/>
         <h1>Listar os filmes</h1>
-      <div className="listaFilmes">
-        
-        <ListaFilmes data={filmes}/>
-          
-        
-      </div>
+        <div className="listaFilmes">
+          <ListaFilmes  filmes={filmes} />
+          <button onClick={()=>setPage(page=>page+1)} >Mais...</button>
+        </div>
       </div>
     );
-  }
+  
 }
 export default Movies;
