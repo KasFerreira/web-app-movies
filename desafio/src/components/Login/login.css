@@ -1,0 +1,12 @@
+.user-login{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+.user-login h1{
+    font-size: 2rem;
+    
+}
