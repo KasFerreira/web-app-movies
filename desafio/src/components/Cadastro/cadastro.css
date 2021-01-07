@@ -1,0 +1,32 @@
+.user-Cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 200px;
+    position: relative;
+
+
+
+}
+.user-Cadastro h1{
+    font-size: 1.5rem;
+    margin-left: 70px;
+    color: cadetblue;
+    
+}
+#user{
+    margin-left: 20px;
+}
+#password{
+    margin-left: 12px;
+}
+
+#btn-form{
+    left: 90px;
+    position: relative;
+    margin-top: 5px;
+}
+#btn-form Button{
+    margin-right: 15px;
+}
