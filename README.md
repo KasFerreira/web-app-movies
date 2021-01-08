@@ -1,9 +1,16 @@
 Para testar a aplicação basta subir o backend e o front:
 
-1- Ir na pasta backend e rodar: adonis server --dev.
+
+1- Ir na pasta backend e : 
+ - copiar o .env example para .env: ( cp .env.example .env )
+ - npm install
+ - adonis migration:run 
+ - adonis server --dev.
 ele estará rodando no localhost:3333.
 
-2- Para o frontend em react basta entrar na pasta frontend e digitar:  yarn start,
+2- Para o frontend em react basta entrar na pasta frontend e digitar: 
+ - npm install
+ - yarn start,
 ele estará rodando em localhost:3000. 
 
 
