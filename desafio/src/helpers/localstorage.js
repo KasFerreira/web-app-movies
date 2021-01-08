@@ -25,3 +25,4 @@ export function setLocalStorage(key, data){
         return false
     }
 }
+

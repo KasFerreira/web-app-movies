@@ -19,15 +19,5 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
-
-// Route.post('/', () => {
-//   const all = request.all()
-
-
-//   console.log(all)
-//   return { greeting: 'Hello world in JSON',  }
-// })
-
 Route.post('/cadastro', 'UserController.create')
 Route.post('/login', 'SessionController.create')
-

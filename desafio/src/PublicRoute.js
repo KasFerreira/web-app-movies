@@ -8,7 +8,7 @@ const PublicRoute = ({component: Component, restricted, ...rest}) => {
         // restricted = true meaning restricted route
         <Route {...rest} render={props => (
             isAuthenticated() && restricted ?
-                <Redirect to={{ pathname: "/", state: {from: props.location}}} />
+                <Redirect to={{ pathname: "/movies", state: {from: props.location}}} />
             : <Component {...props} />
         )} />
     );

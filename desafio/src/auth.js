@@ -1,4 +1,6 @@
 
+import { getLocalStorage } from './helpers/localstorage'
 
-export const isAuthenticated = () => true;
+
+export const isAuthenticated = () => getLocalStorage('TokenJWT');
 

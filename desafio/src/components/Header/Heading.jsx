@@ -1,10 +1,32 @@
-import '../Header/heading.css'
-import {Navbar, Nav, NavDropdown, Form, FormControl, Button}from 'react-bootstrap'
+import './heading.css'
+import {Navbar, Nav, Form, FormControl, Button}from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom'
+import axios from "axios";
+import { setLocalStorage } from '../../helpers/localstorage'
+
 
 
 function Heading(){
+
+    function handleChange(event){
+      console.log(event.target.value)
+      var term = event.target.value
+      searchMovies(term)
+    }
+    async function searchMovies(term){
+
+      const response = await axios.get(
+        "https://api.themoviedb.org/3/search/movie?api_key=5f5639e7e6d8cd1f2e64643d369ab6e8&query="+term
+      );
+        console.log(response.data)
+    }
+
+    function logout(event){
+      setLocalStorage("TokenJWT", "") 
+
+    }
+   
+
     return <div className="Heading">
   <Navbar bg="light" expand="lg">
   <Navbar.Brand href="#home">LucasFilms</Navbar.Brand>
@@ -16,11 +38,11 @@ function Heading(){
      
     </Nav>
     <Form inline>
-      <FormControl type="text" placeholder="search for a movie" className="mr-sm-2" />
+      <FormControl  onChange={handleChange} type="text" placeholder="search for a movie" className="mr-sm-2" />
       <Button variant="outline-success">Search</Button>
     </Form>
-    <Nav.Link href="/login">Login</Nav.Link>
-     <Nav.Link href="#link">Logout</Nav.Link>
+    <Nav.Link href="/">Login</Nav.Link>
+     <Nav.Link onClick={logout} href="/">Logout</Nav.Link>
 
   </Navbar.Collapse>
 </Navbar>

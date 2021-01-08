@@ -5,28 +5,40 @@
     flex-direction: column;
     top: 200px;
     position: relative;
+    
 
 
 
 }
+.user-Cadastro#nome#user#password{
+    margin-left: 20px;
+    position: absolute;
+    left: 420px;
+}
+.date{
+    margin-left: 40px;
+
+    left: -40px;
+    position: absolute;
+    top: -15px;
+
+}
+
+
+
 .user-Cadastro h1{
     font-size: 1.5rem;
-    margin-left: 70px;
+    margin-left: 10px;
     color: cadetblue;
     
 }
-#user{
-    margin-left: 20px;
-}
-#password{
-    margin-left: 12px;
+
+
+#btn-form-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    
 }
 
-#btn-form{
-    left: 90px;
-    position: relative;
-    margin-top: 5px;
-}
-#btn-form Button{
-    margin-right: 15px;
-}

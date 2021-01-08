@@ -1,0 +1,26 @@
+.movies{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.movie-li{
+    margin-bottom: 40px;
+}
+
+.listaFilmes{
+    display: flex;
+    flex-direction: row;
+}
+Button{
+    margin-bottom: 20px;
+}
+
+.movies h1{
+    color: blueviolet;
+    margin: 50px;
+    border: blueviolet solid;
+    padding: 15;
+    width: 200px;
+    text-align: center;
+    border-radius: 10%;
+}
