@@ -1,12 +1,33 @@
 .user-login{
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
+    top: 200px;
+    position: relative;
+
+
 
 }
 .user-login h1{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    color: cadetblue;
     
+}
+
+.user-login input{
+    margin-left: 20px;
+    position:relative;
+    
+}
+
+
+#btn-form{
+    left: 90px;
+    position: relative;
+    margin-top: 8px;
+}
+#btn-form Button{
+    margin-right: 15px;
 }
